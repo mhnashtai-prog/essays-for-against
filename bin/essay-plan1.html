@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2 Opinion Essays - Blueprint First</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #d4af37 0%, rgba(212, 175, 55, 0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+        }
+
+        .header .subtitle {
+            font-size: 0.8125rem;
+            color: #8e8e93;
+            margin-bottom: 0.375rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .header .author {
+            font-size: 0.6875rem;
+            color: #636366;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .info-banner {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .info-banner p {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        }
+
+        .card {
+            background: rgba(30, 30, 30, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 
+                inset 4px 4px 8px rgba(0, 0, 0, 0.5),
+                inset -4px -4px 8px rgba(60, 60, 60, 0.3),
+                8px 8px 16px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            min-height: 560px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+
+        .card-number {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #d4af37 0%, #f4e5b8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1a1a1a;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-title {
+            color: #d4af37;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .carousel-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s ease;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            padding: 10px 5px;
+            overflow-y: auto;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(90deg, #d4af37 0%, #b8941f 100%);
+            color: #1a1a1a;
+            padding: 5px 14px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-label.skeleton {
+            background: linear-gradient(90deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        .section-label.intro {
+            background: linear-gradient(90deg, #2196f3 0%, #1976d2 100%);
+            color: white;
+        }
+
+        .section-label.body {
+            background: linear-gradient(90deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+        }
+
+        .section-label.conclusion {
+            background: linear-gradient(90deg, #ff9800 0%, #f57c00 100%);
+            color: white;
+        }
+
+        .word-count {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 3px 10px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-text {
+            color: #e0e0e0;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border-left: 3px solid rgba(212, 175, 55, 0.4);
+        }
+
+        .key-expression {
+            color: #f4e5b8;
+            font-weight: 600;
+            background: rgba(212, 175, 55, 0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Skeleton Blueprint Styles */
+        .skeleton-container {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .skeleton-header {
+            text-align: center;
+            color: #d4af37;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .skeleton-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border-left: 4px solid;
+        }
+
+        .skeleton-section.intro-sk { border-left-color: #2196f3; }
+        .skeleton-section.body-sk { border-left-color: #4CAF50; }
+        .skeleton-section.conclusion-sk { border-left-color: #ff9800; }
+
+        .skeleton-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skeleton-title .label { color: #d4af37; }
+        .skeleton-title .count { color: #ffd700; font-size: 0.8rem; }
+
+        .skeleton-list {
+            list-style: none;
+            color: #e0e0e0;
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        .skeleton-list li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        .skeleton-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .pattern-badge {
+            display: inline-block;
+            background: rgba(100, 149, 237, 0.3);
+            border: 1px solid rgba(100, 149, 237, 0.5);
+            color: #6495ed;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-left: 5px;
+        }
+
+        .nav-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 10px 0;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot:hover {
+            background: rgba(212, 175, 55, 0.5);
+            transform: scale(1.2);
+        }
+
+        .dot.active {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e5b8 100%);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            transform: scale(1.3);
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .arrow-btn {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #d4af37;
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .arrow-btn:hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .arrow-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                min-height: 520px;
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="header">
+  <h1>INTUITY</h1>
+  <p class="subtitle">Intuitive & Immersive Learning</p>
+  <p class="author">by Majid Nashtai</p>
+</div>
+
+    <div class="container">
+        <!-- Card 1: Social Media -->
+        <div class="card">
+            <div class="card-number">1</div>
+            <h2 class="card-title">Social Media</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" data-track="1">
+                    <!-- Slide 0: SKELETON -->
+                    <div class="carousel-slide">
+                        <div class="skeleton-container">
+                            <div class="skeleton-header">190 WORDS</div>
+                            
+                            <div class="skeleton-section intro-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">INTRO</span>
+                                    <span class="count">40 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 0.9rem; line-height: 2; text-align: center; padding: 15px 0;">
+                                    Context<br>
+                                    Your opinion<br>
+                                    Preview
+                                </div>
+                            </div>
+
+                            <div class="skeleton-section body-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">BODY</span>
+                                    <span class="count">3 × 50 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 1rem; line-height: 2.2; text-align: center; padding: 20px 0;">
+                                    <div style="margin-bottom: 15px;">
+                                        <strong style="color: #4CAF50;">L</strong> → <strong style="color: #4CAF50;">I</strong> → <strong style="color: #4CAF50;">3 supports</strong>
+                                    </div>
+                                    <div style="font-size: 0.85rem; color: #b0b0b0;">
+                                        Reason • Example • Result<br>
+                                        Compare • Contrast
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skeleton-section conclusion-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">CONCLUSION</span>
+                                    <span class="count">30 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 0.9rem; line-height: 2; text-align: center; padding: 15px 0;">
+                                    Summary<br>
+                                    Your judgment<br>
+                                    Final thought
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 1: Introduction -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label intro">INTRODUCTION</span>
+                            <span class="word-count">38 words</span>
+                        </div>
+                        <div class="section-text">
+                            <span class="key-expression">Nowadays</span> social media platforms have become an integral part of our daily lives. <span class="key-expression">It is generally assumed that</span> they offer unprecedented connectivity, <span class="key-expression">however</span> there are growing concerns about their impact. <span class="key-expression">Therefore, it is vitally important to consider</span> both perspectives.
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Body (All 3 Claims) -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label body">BODY - 3 CLAIMS</span>
+                            <span class="word-count">155 words</span>
+                        </div>
+                        
+                        <div class="section-text" style="margin-bottom: 15px;">
+                            <strong style="color: #4CAF50;">CLAIM 1 - Connectivity:</strong><br>
+                            <span class="key-expression">Firstly</span>, it seems to me <span class="key-expression">the main advantage is that</span> social media enables instant global communication. <span class="key-expression">For example</span>, families separated by distance maintain close relationships through video calls. <span class="key-expression">Consequently</span>, geographical barriers no longer prevent meaningful connections. <span class="key-expression">This is largely because</span> platforms provide real-time interaction tools.
+                        </div>
+
+                        <div class="section-text" style="margin-bottom: 15px;">
+                            <strong style="color: #4CAF50;">CLAIM 2 - Networking:</strong><br>
+                            <span class="key-expression">Secondly, one positive aspect is that</span> these platforms provide valuable professional networking opportunities. <span class="key-expression">For instance</span>, professionals connect with colleagues and potential employers worldwide. <span class="key-expression">Therefore</span>, career prospects expand significantly. <span class="key-expression">Unlike</span> traditional networking, social media offers instant access to global markets.
+                        </div>
+
+                        <div class="section-text">
+                            <strong style="color: #f44336;">CLAIM 3 - Privacy (Counter):</strong><br>
+                            <span class="key-expression">However, as far as I can judge, the obvious drawback is that</span> privacy concerns remain serious. <span class="key-expression">This is largely due to</span> platforms collecting personal data. <span class="key-expression">For instance</span>, information is often sold to advertisers without explicit consent. <span class="key-expression">Although</span> this is problematic, benefits outweigh these concerns.
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Conclusion -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label conclusion">CONCLUSION</span>
+                            <span class="word-count">33 words</span>
+                        </div>
+                        <div class="section-text">
+                            <span class="key-expression">All things considered</span>, social media offers both significant benefits and substantial risks. <span class="key-expression">As far as I can judge, despite some of the views expressed</span>, the key lies in mindful usage and digital literacy education.
+                        </div>
+                        <div style="margin-top: 20px; padding: 15px; background: rgba(76, 175, 80, 0.1); border-radius: 10px; border: 2px solid rgba(76, 175, 80, 0.3);">
+                            <div style="color: #4CAF50; font-weight: 700; margin-bottom: 10px;">✓ COMPLETE ESSAY: 190 WORDS</div>
+                            <div style="color: #e0e0e0; font-size: 0.85rem; line-height: 1.6;">
+                                Structure: Introduction (38) + Claim 1 (52) + Claim 2 (51) + Claim 3 (49) + Conclusion (33) = 190 words
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-dots" data-dots="1">
+                <div class="dot active" onclick="goToSlide(1, 0)"></div>
+                <div class="dot" onclick="goToSlide(1, 1)"></div>
+                <div class="dot" onclick="goToSlide(1, 2)"></div>
+                <div class="dot" onclick="goToSlide(1, 3)"></div>
+            </div>
+            <div class="nav-arrows">
+                <button class="arrow-btn" onclick="prevSlide(1)">← Previous</button>
+                <button class="arrow-btn" onclick="nextSlide(1)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Card 2: Online Shopping -->
+        <div class="card">
+            <div class="card-number">2</div>
+            <h2 class="card-title">Online Shopping</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" data-track="2">
+                    <!-- Slide 0: SKELETON -->
+                    <div class="carousel-slide">
+                        <div class="skeleton-container">
+                            <div class="skeleton-header">190 WORDS</div>
+                            
+                            <div class="skeleton-section intro-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">INTRO</span>
+                                    <span class="count">40 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 0.9rem; line-height: 2; text-align: center; padding: 15px 0;">
+                                    Context<br>
+                                    Your opinion<br>
+                                    Preview
+                                </div>
+                            </div>
+
+                            <div class="skeleton-section body-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">BODY</span>
+                                    <span class="count">3 × 50 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 1rem; line-height: 2.2; text-align: center; padding: 20px 0;">
+                                    <div style="margin-bottom: 15px;">
+                                        <strong style="color: #4CAF50;">L</strong> → <strong style="color: #4CAF50;">I</strong> → <strong style="color: #4CAF50;">3 supports</strong>
+                                    </div>
+                                    <div style="font-size: 0.85rem; color: #b0b0b0;">
+                                        Reason • Example • Result<br>
+                                        Compare • Contrast
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skeleton-section conclusion-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">CONCLUSION</span>
+                                    <span class="count">30 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 0.9rem; line-height: 2; text-align: center; padding: 15px 0;">
+                                    Summary<br>
+                                    Your judgment<br>
+                                    Final thought
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 1: Introduction -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label intro">INTRODUCTION</span>
+                            <span class="word-count">39 words</span>
+                        </div>
+                        <div class="section-text">
+                            <span class="key-expression">Over the past few years there has been a significant increase in</span> online shopping. <span class="key-expression">We can all accept the fact that</span> e-commerce has revolutionized retail, <span class="key-expression">however</span> traditional stores offer unique advantages. <span class="key-expression">Hence, it is vitally important to consider</span> both sides.
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Body -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label body">BODY - 3 CLAIMS</span>
+                            <span class="word-count">152 words</span>
+                        </div>
+                        
+                        <div class="section-text" style="margin-bottom: 15px;">
+                            <strong style="color: #4CAF50;">CLAIM 1:</strong>
+                            <span class="key-expression">Firstly, the main argument in favour is that</span> online shopping offers unparalleled convenience. <span class="key-expression">For instance</span>, consumers browse and purchase products 24/7 from home. <span class="key-expression">Consequently</span>, shopping becomes effortless. <span class="key-expression">This is because</span> digital platforms eliminate travel time.
+                        </div>
+
+                        <div class="section-text" style="margin-bottom: 15px;">
+                            <strong style="color: #4CAF50;">CLAIM 2:</strong>
+                            <span class="key-expression">Secondly, one positive aspect is that</span> platforms provide access to wider product ranges. <span class="key-expression">This is largely due to</span> global marketplace integration. <span class="key-expression">For example</span>, shoppers compare prices across multiple retailers instantly. <span class="key-expression">Unlike</span> physical stores, online platforms offer unlimited inventory.
+                        </div>
+
+                        <div class="section-text">
+                            <strong style="color: #f44336;">CLAIM 3:</strong>
+                            <span class="key-expression">However, the obvious drawback is that</span> e-commerce contributes to environmental concerns. <span class="key-expression">This is largely due to</span> excessive packaging and delivery emissions. <span class="key-expression">For instance</span>, each individual delivery increases carbon footprint. <span class="key-expression">Although</span> concerning, sustainable options are emerging.
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Conclusion -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label conclusion">CONCLUSION</span>
+                            <span class="word-count">34 words</span>
+                        </div>
+                        <div class="section-text">
+                            <span class="key-expression">All in all, to sum up</span>, online shopping presents both remarkable convenience and notable challenges. <span class="key-expression">As far as I'm concerned, even though there are concerns about</span> sustainability, the benefits outweigh the drawbacks when practiced responsibly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-dots" data-dots="2">
+                <div class="dot active" onclick="goToSlide(2, 0)"></div>
+                <div class="dot" onclick="goToSlide(2, 1)"></div>
+                <div class="dot" onclick="goToSlide(2, 2)"></div>
+                <div class="dot" onclick="goToSlide(2, 3)"></div>
+            </div>
+            <div class="nav-arrows">
+                <button class="arrow-btn" onclick="prevSlide(2)">← Previous</button>
+                <button class="arrow-btn" onclick="nextSlide(2)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Card 3: Travelling -->
+        <div class="card">
+            <div class="card-number">3</div>
+            <h2 class="card-title">Travelling</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" data-track="3">
+                    <!-- Slide 0: SKELETON -->
+                    <div class="carousel-slide">
+                        <div class="skeleton-container">
+                            <div class="skeleton-header">190 WORDS</div>
+                            
+                            <div class="skeleton-section intro-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">INTRO</span>
+                                    <span class="count">40 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 0.9rem; line-height: 2; text-align: center; padding: 15px 0;">
+                                    Context<br>
+                                    Your opinion<br>
+                                    Preview
+                                </div>
+                            </div>
+
+                            <div class="skeleton-section body-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">BODY</span>
+                                    <span class="count">3 × 50 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 1rem; line-height: 2.2; text-align: center; padding: 20px 0;">
+                                    <div style="margin-bottom: 15px;">
+                                        <strong style="color: #4CAF50;">L</strong> → <strong style="color: #4CAF50;">I</strong> → <strong style="color: #4CAF50;">3 supports</strong>
+                                    </div>
+                                    <div style="font-size: 0.85rem; color: #b0b0b0;">
+                                        Reason • Example • Result<br>
+                                        Compare • Contrast
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skeleton-section conclusion-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">CONCLUSION</span>
+                                    <span class="count">30 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 0.9rem; line-height: 2; text-align: center; padding: 15px 0;">
+                                    Summary<br>
+                                    Your judgment<br>
+                                    Final thought
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!-- Slide 1: Introduction -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label intro">INTRODUCTION</span>
+                            <span class="word-count">37 words</span>
+                        </div>
+                        <div class="section-text">
+                            <span class="key-expression">It is widely recognized that</span> travelling broadens the mind and enriches life experiences. <span class="key-expression">There has been a growing recognition that</span> international travel offers educational benefits, <span class="key-expression">despite</span> environmental costs. <span class="key-expression">Consequently, it is essential to study</span> both perspectives.
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Body -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label body">BODY - 3 CLAIMS</span>
+                            <span class="word-count">153 words</span>
+                        </div>
+                        
+                        <div class="section-text" style="margin-bottom: 15px;">
+                            <strong style="color: #4CAF50;">CLAIM 1:</strong>
+                            <span class="key-expression">Firstly, the main advantage is that</span> travelling exposes people to diverse cultures and perspectives. <span class="key-expression">For example</span>, experiencing different traditions firsthand fosters greater understanding. <span class="key-expression">Consequently</span>, tolerance increases significantly. <span class="key-expression">This is because</span> direct cultural immersion breaks down stereotypes.
+                        </div>
+
+                        <div class="section-text" style="margin-bottom: 15px;">
+                            <strong style="color: #4CAF50;">CLAIM 2:</strong>
+                            <span class="key-expression">Secondly, one positive aspect is that</span> exploring new destinations enhances personal growth. <span class="key-expression">This is largely due to</span> navigating unfamiliar environments independently. <span class="key-expression">For instance</span>, travelers build confidence and problem-solving skills. <span class="key-expression">Unlike</span> staying home, travel pushes comfort zone boundaries.
+                        </div>
+
+                        <div class="section-text">
+                            <strong style="color: #f44336;">CLAIM 3:</strong>
+                            <span class="key-expression">However, the argument against frequent air travel is that</span> it contributes to climate change. <span class="key-expression">This is largely due to</span> substantial carbon emissions from aviation. <span class="key-expression">For instance</span>, single flights produce significant environmental impact. <span class="key-expression">Although</span> concerning, sustainable tourism practices are emerging.
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Conclusion -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label conclusion">CONCLUSION</span>
+                            <span class="word-count">32 words</span>
+                        </div>
+                        <div class="section-text">
+                            <span class="key-expression">All things considered, in conclusion</span>, travelling offers invaluable experiences alongside environmental responsibilities. <span class="key-expression">It seems to me, despite some of the arguments</span>, we should embrace responsible travel balancing personal enrichment with ecological preservation.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-dots" data-dots="3">
+                <div class="dot active" onclick="goToSlide(3, 0)"></div>
+                <div class="dot" onclick="goToSlide(3, 1)"></div>
+                <div class="dot" onclick="goToSlide(3, 2)"></div>
+                <div class="dot" onclick="goToSlide(3, 3)"></div>
+            </div>
+            <div class="nav-arrows">
+                <button class="arrow-btn" onclick="prevSlide(3)">← Previous</button>
+                <button class="arrow-btn" onclick="nextSlide(3)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Card 4: Living in Big Cities -->
+        <div class="card">
+            <div class="card-number">4</div>
+            <h2 class="card-title">Living in Big Cities</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" data-track="4">
+                    <!-- Slide 0: SKELETON -->
+                    <div class="carousel-slide">
+                        <div class="skeleton-container">
+                            <div class="skeleton-header">190 WORDS</div>
+                            
+                            <div class="skeleton-section intro-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">INTRO</span>
+                                    <span class="count">40 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 0.9rem; line-height: 2; text-align: center; padding: 15px 0;">
+                                    Context<br>
+                                    Your opinion<br>
+                                    Preview
+                                </div>
+                            </div>
+
+                            <div class="skeleton-section body-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">BODY</span>
+                                    <span class="count">3 × 50 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 1rem; line-height: 2.2; text-align: center; padding: 20px 0;">
+                                    <div style="margin-bottom: 15px;">
+                                        <strong style="color: #4CAF50;">L</strong> → <strong style="color: #4CAF50;">I</strong> → <strong style="color: #4CAF50;">3 supports</strong>
+                                    </div>
+                                    <div style="font-size: 0.85rem; color: #b0b0b0;">
+                                        Reason • Example • Result<br>
+                                        Compare • Contrast
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skeleton-section conclusion-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">CONCLUSION</span>
+                                    <span class="count">30 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 0.9rem; line-height: 2; text-align: center; padding: 15px 0;">
+                                    Summary<br>
+                                    Your judgment<br>
+                                    Final thought
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 1: Introduction -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label intro">INTRODUCTION</span>
+                            <span class="word-count">36 words</span>
+                        </div>
+                        <div class="section-text">
+                            <span class="key-expression">There is a huge concern that</span> urban migration continues to accelerate globally. <span class="key-expression">It is common knowledge that</span> cities offer abundant opportunities, <span class="key-expression">however</span> they also present unique challenges. <span class="key-expression">Therefore, we should address</span> this issue.
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Body -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label body">BODY - 3 CLAIMS</span>
+                            <span class="word-count">153 words</span>
+                        </div>
+                        
+                        <div class="section-text" style="margin-bottom: 15px;">
+                            <strong style="color: #4CAF50;">CLAIM 1:</strong>
+                            <span class="key-expression">Firstly, the main advantage is that</span> city living provides access to superior career opportunities. <span class="key-expression">For example</span>, major corporations concentrate in urban centers. <span class="key-expression">Consequently</span>, professionals earn higher salaries and gain valuable experience. <span class="key-expression">Unlike</span> rural areas, cities offer diverse job markets.
+                        </div>
+
+                        <div class="section-text" style="margin-bottom: 15px;">
+                            <strong style="color: #4CAF50;">CLAIM 2:</strong>
+                            <span class="key-expression">Secondly, one positive aspect is that</span> urban environments offer extensive cultural amenities. <span class="key-expression">This is largely because</span> cities concentrate resources and populations. <span class="key-expression">For instance</span>, residents enjoy museums, theaters, diverse restaurants. <span class="key-expression">Therefore</span>, quality of life improves through cultural richness.
+                        </div>
+
+                        <div class="section-text">
+                            <strong style="color: #f44336;">CLAIM 3:</strong>
+                            <span class="key-expression">However, the argument against urban living is that</span> it involves exorbitant costs. <span class="key-expression">This is largely due to</span> high demand for limited housing. <span class="key-expression">For example</span>, rent consumes significant portions of salaries. <span class="key-expression">Although</span> concerning, cities continue attracting people.
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Conclusion -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label conclusion">CONCLUSION</span>
+                            <span class="word-count">31 words</span>
+                        </div>
+                        <div class="section-text">
+                            <span class="key-expression">All things considered, to sum up</span>, city life presents opportunities and challenges. <span class="key-expression">It is clear that, despite some arguments</span>, urban centers will continue attracting people seeking professional advancement and cultural diversity.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-dots" data-dots="4">
+                <div class="dot active" onclick="goToSlide(4, 0)"></div>
+                <div class="dot" onclick="goToSlide(4, 1)"></div>
+                <div class="dot" onclick="goToSlide(4, 2)"></div>
+                <div class="dot" onclick="goToSlide(4, 3)"></div>
+            </div>
+            <div class="nav-arrows">
+                <button class="arrow-btn" onclick="prevSlide(4)">← Previous</button>
+                <button class="arrow-btn" onclick="nextSlide(4)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Card 5: Learning English -->
+        <div class="card">
+            <div class="card-number">5</div>
+            <h2 class="card-title">Learning English</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" data-track="5">
+                    <!-- Slide 0: SKELETON -->
+                    <div class="carousel-slide">
+                        <div class="skeleton-container">
+                            <div class="skeleton-header">190 WORDS</div>
+                            
+                            <div class="skeleton-section intro-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">INTRO</span>
+                                    <span class="count">40 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 0.9rem; line-height: 2; text-align: center; padding: 15px 0;">
+                                    Context<br>
+                                    Your opinion<br>
+                                    Preview
+                                </div>
+                            </div>
+
+                            <div class="skeleton-section body-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">BODY</span>
+                                    <span class="count">3 × 50 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 1rem; line-height: 2.2; text-align: center; padding: 20px 0;">
+                                    <div style="margin-bottom: 15px;">
+                                        <strong style="color: #4CAF50;">L</strong> → <strong style="color: #4CAF50;">I</strong> → <strong style="color: #4CAF50;">3 supports</strong>
+                                    </div>
+                                    <div style="font-size: 0.85rem; color: #b0b0b0;">
+                                        Reason • Example • Result<br>
+                                        Compare • Contrast
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skeleton-section conclusion-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">CONCLUSION</span>
+                                    <span class="count">30 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 0.9rem; line-height: 2; text-align: center; padding: 15px 0;">
+                                    Summary<br>
+                                    Your judgment<br>
+                                    Final thought
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 1: Introduction -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label intro">INTRODUCTION</span>
+                            <span class="word-count">38 words</span>
+                        </div>
+                        <div class="section-text">
+                            <span class="key-expression">It has always played a significant role</span> to communicate across cultures. <span class="key-expression">Recent studies show that</span> English has become the global lingua franca, <span class="key-expression">despite</span> debates about linguistic diversity. <span class="key-expression">Hence, it is imperative to discuss</span> its impact.
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Body -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label body">BODY - 3 CLAIMS</span>
+                            <span class="word-count">151 words</span>
+                        </div>
+                        
+                        <div class="section-text" style="margin-bottom: 15px;">
+                            <strong style="color: #4CAF50;">CLAIM 1:</strong>
+                            <span class="key-expression">Firstly, the main advantage is that</span> learning English opens doors to international career opportunities. <span class="key-expression">For example</span>, multinational companies require English proficiency. <span class="key-expression">Consequently</span>, job prospects expand globally. <span class="key-expression">This is because</span> English dominates business communication worldwide.
+                        </div>
+
+                        <div class="section-text" style="margin-bottom: 15px;">
+                            <strong style="color: #4CAF50;">CLAIM 2:</strong>
+                            <span class="key-expression">Secondly, one positive aspect is that</span> English fluency grants access to vast educational resources. <span class="key-expression">This is largely because</span> most academic research is published in English. <span class="key-expression">For instance</span>, online courses predominantly use English. <span class="key-expression">Therefore</span>, learners access cutting-edge knowledge.
+                        </div>
+
+                        <div class="section-text">
+                            <strong style="color: #f44336;">CLAIM 3:</strong>
+                            <span class="key-expression">However, the argument against prioritizing English is that</span> it may threaten linguistic diversity. <span class="key-expression">This is largely due to</span> diminishing use of minority languages. <span class="key-expression">For instance</span>, students without English access face limited opportunities. <span class="key-expression">Although</span> important, multilingualism should be promoted.
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Conclusion -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label conclusion">CONCLUSION</span>
+                            <span class="word-count">33 words</span>
+                        </div>
+                        <div class="section-text">
+                            <span class="key-expression">All in all, in conclusion</span>, learning English provides significant practical advantages while raising concerns about cultural preservation. <span class="key-expression">As far as I can judge</span>, English proficiency should be pursued alongside preserving native languages.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-dots" data-dots="5">
+                <div class="dot active" onclick="goToSlide(5, 0)"></div>
+                <div class="dot" onclick="goToSlide(5, 1)"></div>
+                <div class="dot" onclick="goToSlide(5, 2)"></div>
+                <div class="dot" onclick="goToSlide(5, 3)"></div>
+            </div>
+            <div class="nav-arrows">
+                <button class="arrow-btn" onclick="prevSlide(5)">← Previous</button>
+                <button class="arrow-btn" onclick="nextSlide(5)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Card 6: Healthy Diet -->
+        <div class="card">
+            <div class="card-number">6</div>
+            <h2 class="card-title">Healthy Diet</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" data-track="6">
+                    <!-- Slide 0: SKELETON -->
+                    <div class="carousel-slide">
+                        <div class="skeleton-container">
+                            <div class="skeleton-header">190 WORDS</div>
+                            
+                            <div class="skeleton-section intro-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">INTRO</span>
+                                    <span class="count">40 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 0.9rem; line-height: 2; text-align: center; padding: 15px 0;">
+                                    Context<br>
+                                    Your opinion<br>
+                                    Preview
+                                </div>
+                            </div>
+
+                            <div class="skeleton-section body-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">BODY</span>
+                                    <span class="count">3 × 50 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 1rem; line-height: 2.2; text-align: center; padding: 20px 0;">
+                                    <div style="margin-bottom: 15px;">
+                                        <strong style="color: #4CAF50;">L</strong> → <strong style="color: #4CAF50;">I</strong> → <strong style="color: #4CAF50;">3 supports</strong>
+                                    </div>
+                                    <div style="font-size: 0.85rem; color: #b0b0b0;">
+                                        Reason • Example • Result<br>
+                                        Compare • Contrast
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skeleton-section conclusion-sk">
+                                <div class="skeleton-title">
+                                    <span class="label">CONCLUSION</span>
+                                    <span class="count">30 words</span>
+                                </div>
+                                <div style="color: #e0e0e0; font-size: 0.9rem; line-height: 2; text-align: center; padding: 15px 0;">
+                                    Summary<br>
+                                    Your judgment<br>
+                                    Final thought
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 1: Introduction -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label intro">INTRODUCTION</span>
+                            <span class="word-count">37 words</span>
+                        </div>
+                        <div class="section-text">
+                            <span class="key-expression">Few people would deny that</span> maintaining a healthy diet is crucial for wellbeing. <span class="key-expression">It is a well-established fact that</span> nutrition directly impacts health, <span class="key-expression">however</span> modern lifestyles make healthy eating challenging. <span class="key-expression">Therefore, how can we tackle</span> this problem?
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Body -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label body">BODY - 3 CLAIMS</span>
+                            <span class="word-count">152 words</span>
+                        </div>
+                        
+                        <div class="section-text" style="margin-bottom: 15px;">
+                            <strong style="color: #4CAF50;">CLAIM 1:</strong>
+                            <span class="key-expression">Firstly, the main advantage is that</span> eating healthily prevents chronic diseases. <span class="key-expression">For example</span>, diets rich in vegetables significantly reduce health risks. <span class="key-expression">Consequently</span>, medical costs decrease substantially. <span class="key-expression">This is because</span> proper nutrition strengthens immune systems.
+                        </div>
+
+                        <div class="section-text" style="margin-bottom: 15px;">
+                            <strong style="color: #4CAF50;">CLAIM 2:</strong>
+                            <span class="key-expression">Secondly, one positive aspect is that</span> proper nutrition enhances energy levels. <span class="key-expression">This is largely because</span> balanced meals stabilize blood sugar. <span class="key-expression">For instance</span>, people experience improved concentration and productivity. <span class="key-expression">Therefore</span>, both mental and physical performance improve.
+                        </div>
+
+                        <div class="section-text">
+                            <strong style="color: #f44336;">CLAIM 3:</strong>
+                            <span class="key-expression">However, the argument against strict healthy eating is that</span> it can be expensive and time-consuming. <span class="key-expression">This is largely due to</span> higher costs of fresh produce. <span class="key-expression">For example</span>, organic foods cost significantly more. <span class="key-expression">Although</span> challenging, government subsidies could help.
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Conclusion -->
+                    <div class="carousel-slide">
+                        <div class="section">
+                            <span class="section-label conclusion">CONCLUSION</span>
+                            <span class="word-count">33 words</span>
+                        </div>
+                        <div class="section-text">
+                            <span class="key-expression">All things considered, to sum up</span>, maintaining a healthy diet offers profound benefits despite practical challenges. <span class="key-expression">It seems to me, it is felt that</span> society should prioritize nutrition education and food accessibility.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-dots" data-dots="6">
+                <div class="dot active" onclick="goToSlide(6, 0)"></div>
+                <div class="dot" onclick="goToSlide(6, 1)"></div>
+                <div class="dot" onclick="goToSlide(6, 2)"></div>
+                <div class="dot" onclick="goToSlide(6, 3)"></div>
+            </div>
+            <div class="nav-arrows">
+                <button class="arrow-btn" onclick="prevSlide(6)">← Previous</button>
+                <button class="arrow-btn" onclick="nextSlide(6)">Next →</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const currentSlides = {
+            1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0
+        };
+
+        function updateSlide(cardId) {
+            const track = document.querySelector(`[data-track="${cardId}"]`);
+            const dots = document.querySelectorAll(`[data-dots="${cardId}"] .dot`);
+            const currentSlide = currentSlides[cardId];
+            
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function goToSlide(cardId, slideIndex) {
+            const track = document.querySelector(`[data-track="${cardId}"]`);
+            const totalSlides = track.children.length;
+            
+            if (slideIndex >= 0 && slideIndex < totalSlides) {
+                currentSlides[cardId] = slideIndex;
+                updateSlide(cardId);
+            }
+        }
+
+        function nextSlide(cardId) {
+            const track = document.querySelector(`[data-track="${cardId}"]`);
+            const totalSlides = track.children.length;
+            
+            if (currentSlides[cardId] < totalSlides - 1) {
+                currentSlides[cardId]++;
+                updateSlide(cardId);
+            }
+        }
+
+        function prevSlide(cardId) {
+            if (currentSlides[cardId] > 0) {
+                currentSlides[cardId]--;
+                updateSlide(cardId);
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                Object.keys(currentSlides).forEach(id => prevSlide(parseInt(id)));
+            } else if (e.key === 'ArrowRight') {
+                Object.keys(currentSlides).forEach(id => nextSlide(parseInt(id)));
+            }
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.querySelectorAll('.card').forEach((card, index) => {
+            const cardId = index + 1;
+            
+            card.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            card.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe(cardId);
+            });
+        });
+
+        function handleSwipe(cardId) {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide(cardId);
+            }
+            if (touchEndX > touchStartX + 50) {
+                prevSlide(cardId);
+            }
+        }
+    </script>
+</body>
+</html>
