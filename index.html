@@ -158,11 +158,6 @@
             box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .section-label.skeleton {
-            background: linear-gradient(90deg, #9c27b0 0%, #7b1fa2 100%);
-            color: white;
-        }
-
         .section-label.intro {
             background: linear-gradient(90deg, #2196f3 0%, #1976d2 100%);
             color: white;
@@ -211,79 +206,77 @@
             border-radius: 4px;
         }
 
-        /* Skeleton Blueprint Styles */
-        .skeleton-container {
-            background: rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(212, 175, 55, 0.4);
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-        .skeleton-header {
-            text-align: center;
-            color: #d4af37;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .skeleton-section {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            border-left: 4px solid;
-        }
-
-        .skeleton-section.intro-sk { border-left-color: #2196f3; }
-        .skeleton-section.body-sk { border-left-color: #4CAF50; }
-        .skeleton-section.conclusion-sk { border-left-color: #ff9800; }
-
-        .skeleton-title {
-            font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 10px;
+        /* Skeleton Notes Style */
+        .skeleton-notes {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 16px;
         }
 
-        .skeleton-title .label { color: #d4af37; }
-        .skeleton-title .count { color: #ffd700; font-size: 0.8rem; }
+        .notes-section {
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 4px solid rgba(212, 175, 55, 0.4);
+            padding: 12px 14px;
+            border-radius: 6px;
+        }
 
-        .skeleton-list {
-            list-style: none;
+        .notes-label {
+            color: #d4af37;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .notes-content {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .notes-content strong {
+            color: #f4e5b8;
+            font-weight: 600;
+        }
+
+        .claim-box {
+            background: rgba(76, 175, 80, 0.08);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+            border-left: 3px solid rgba(76, 175, 80, 0.4);
+            padding: 12px 14px;
+            margin: 8px 0;
+            border-radius: 6px;
+        }
+
+        .claim-box.counter {
+            background: rgba(244, 67, 54, 0.08);
+            border-color: rgba(244, 67, 54, 0.2);
+            border-left-color: rgba(244, 67, 54, 0.4);
+        }
+
+        .claim-title {
+            color: #4CAF50;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+
+        .claim-box.counter .claim-title {
+            color: #f44336;
+        }
+
+        .claim-detail {
             color: #e0e0e0;
             font-size: 0.85rem;
-            line-height: 1.8;
+            line-height: 1.5;
+            margin-bottom: 4px;
         }
 
-        .skeleton-list li {
-            padding-left: 20px;
-            position: relative;
-            margin-bottom: 5px;
-        }
-
-        .skeleton-list li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
+        .claim-detail strong {
             color: #d4af37;
-            font-weight: bold;
-        }
-
-        .pattern-badge {
-            display: inline-block;
-            background: rgba(100, 149, 237, 0.3);
-            border: 1px solid rgba(100, 149, 237, 0.5);
-            color: #6495ed;
-            padding: 2px 8px;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            margin-left: 5px;
+            font-weight: 600;
         }
 
         .nav-dots {
@@ -372,47 +365,47 @@
                 <div class="carousel-track" data-track="1">
                     <!-- Slide 0: SKELETON -->
                     <div class="carousel-slide">
-                        <div class="skeleton-container">
-                            <div class="skeleton-header">📋 ESSAY SKELETON - 190 WORDS TOTAL</div>
-                            
-                            <div class="skeleton-section intro-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">INTRODUCTION</span>
-                                    <span class="count">(35-40 words, 3 sentences)</span>
-                                </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>[1] Context:</strong> General statement about social media</li>
-                                    <li><strong>[2] Thesis:</strong> Acknowledge complexity + state position</li>
-                                    <li><strong>[3] Preview:</strong> Question OR instance</li>
-                                </ul>
-                            </div>
-
-                            <div class="skeleton-section body-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">BODY (3 Claims)</span>
-                                    <span class="count">(50-55 words each, 5 sentences)</span>
-                                </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>CLAIM 1 - Connectivity</strong> <span class="pattern-badge">[L→I→E-R-R]</span></li>
-                                    <li><strong>CLAIM 2 - Networking</strong> <span class="pattern-badge">[L→I→E-R-C]</span></li>
-                                    <li><strong>CLAIM 3 - Privacy (Counter)</strong> <span class="pattern-badge">[L→I→R-E-C]</span></li>
-                                </ul>
-                                <div style="margin-top: 10px; padding: 10px; background: rgba(212, 175, 55, 0.1); border-radius: 6px; font-size: 0.8rem;">
-                                    <strong>L-I-3 Pattern:</strong> [L] Listing word → [I] Main claim → 3 supports from: <br>
-                                    <strong>R</strong>-eason, <strong>E</strong>-xample, <strong>R</strong>-esult, <strong>R</strong>-ephrasing, <strong>C</strong>-ompare, <strong>C</strong>-ontrast
+                        <div class="skeleton-notes">
+                            <div class="notes-section">
+                                <span class="notes-label">Background Information</span>
+                                <div class="notes-content">
+                                    These platforms have become part of our daily lives and they offer <strong>connectivity but</strong> there are concerns about their <strong>impact.</strong>
                                 </div>
                             </div>
 
-                            <div class="skeleton-section conclusion-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">CONCLUSION</span>
-                                    <span class="count">(30-35 words, 3 sentences)</span>
+                            <div class="notes-section">
+                                <span class="notes-label">Aim</span>
+                                <div class="notes-content">
+                                    Important to consider both perspectives.
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>[1] Summary:</strong> Restate main idea</li>
-                                    <li><strong>[2] Opinion:</strong> Personal judgment</li>
-                                    <li><strong>[3] Final thought:</strong> Closing statement</li>
-                                </ul>
+                            </div>
+
+                            <div class="claim-box">
+                                <div class="claim-title">CLAIM 1: It enables instant global communication</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Platforms provide real-time interaction tools</div>
+                                <div class="claim-detail"><strong>Example:</strong> Close relationships through video calls</div>
+                                <div class="claim-detail"><strong>Result:</strong> No longer geographical barriers</div>
+                            </div>
+
+                            <div class="claim-box">
+                                <div class="claim-title">CLAIM 2: It provides networking opportunities</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Professionals connect with employers worldwide</div>
+                                <div class="claim-detail"><strong>Example:</strong> Career prospects expand</div>
+                                <div class="claim-detail"><strong>Compare:</strong> Instant access to global markets</div>
+                            </div>
+
+                            <div class="claim-box counter">
+                                <div class="claim-title">CLAIM 3: Privacy remains a major concern</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Platforms collect personal data</div>
+                                <div class="claim-detail"><strong>Example:</strong> Information sold to advertisers</div>
+                                <div class="claim-detail"><strong>Contrast:</strong> Benefits outweigh these concerns</div>
+                            </div>
+
+                            <div class="notes-section">
+                                <span class="notes-label">Conclusion</span>
+                                <div class="notes-content">
+                                    Social media offers <strong>both benefits and risks.</strong> Key lies in mindful usage and digital literacy education.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -428,7 +421,7 @@
                         </div>
                     </div>
 
-                    <!-- Slide 2: Body (All 3 Claims) -->
+                    <!-- Slide 2: Body -->
                     <div class="carousel-slide">
                         <div class="section">
                             <span class="section-label body">BODY - 3 CLAIMS</span>
@@ -436,17 +429,17 @@
                         </div>
                         
                         <div class="section-text" style="margin-bottom: 15px;">
-                            <strong style="color: #4CAF50;">CLAIM 1 - Connectivity:</strong><br>
+                            <strong style="color: #4CAF50;">CLAIM 1:</strong><br>
                             <span class="key-expression">Firstly</span>, it seems to me <span class="key-expression">the main advantage is that</span> social media enables instant global communication. <span class="key-expression">For example</span>, families separated by distance maintain close relationships through video calls. <span class="key-expression">Consequently</span>, geographical barriers no longer prevent meaningful connections. <span class="key-expression">This is largely because</span> platforms provide real-time interaction tools.
                         </div>
 
                         <div class="section-text" style="margin-bottom: 15px;">
-                            <strong style="color: #4CAF50;">CLAIM 2 - Networking:</strong><br>
+                            <strong style="color: #4CAF50;">CLAIM 2:</strong><br>
                             <span class="key-expression">Secondly, one positive aspect is that</span> these platforms provide valuable professional networking opportunities. <span class="key-expression">For instance</span>, professionals connect with colleagues and potential employers worldwide. <span class="key-expression">Therefore</span>, career prospects expand significantly. <span class="key-expression">Unlike</span> traditional networking, social media offers instant access to global markets.
                         </div>
 
                         <div class="section-text">
-                            <strong style="color: #f44336;">CLAIM 3 - Privacy (Counter):</strong><br>
+                            <strong style="color: #f44336;">CLAIM 3:</strong><br>
                             <span class="key-expression">However, as far as I can judge, the obvious drawback is that</span> privacy concerns remain serious. <span class="key-expression">This is largely due to</span> platforms collecting personal data. <span class="key-expression">For instance</span>, information is often sold to advertisers without explicit consent. <span class="key-expression">Although</span> this is problematic, benefits outweigh these concerns.
                         </div>
                     </div>
@@ -489,41 +482,47 @@
                 <div class="carousel-track" data-track="2">
                     <!-- Slide 0: SKELETON -->
                     <div class="carousel-slide">
-                        <div class="skeleton-container">
-                            <div class="skeleton-header">📋 ESSAY SKELETON - 190 WORDS TOTAL</div>
-                            
-                            <div class="skeleton-section intro-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">INTRODUCTION</span>
-                                    <span class="count">(35-40 words, 3 sentences)</span>
+                        <div class="skeleton-notes">
+                            <div class="notes-section">
+                                <span class="notes-label">Background Information</span>
+                                <div class="notes-content">
+                                    Online shopping has increased significantly and e-commerce has <strong>revolutionized retail but</strong> traditional stores offer <strong>unique advantages.</strong>
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>[1] Context:</strong> Trend in e-commerce</li>
-                                    <li><strong>[2] Thesis:</strong> Revolution vs. traditional stores</li>
-                                    <li><strong>[3] Preview:</strong> Question about benefits</li>
-                                </ul>
                             </div>
 
-                            <div class="skeleton-section body-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">BODY (3 Claims)</span>
-                                    <span class="count">(50-55 words each)</span>
+                            <div class="notes-section">
+                                <span class="notes-label">Aim</span>
+                                <div class="notes-content">
+                                    Vitally important to consider both sides.
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>CLAIM 1 - Convenience</strong> <span class="pattern-badge">[L→I→E-R-R]</span></li>
-                                    <li><strong>CLAIM 2 - Product Range</strong> <span class="pattern-badge">[L→I→R-E-C]</span></li>
-                                    <li><strong>CLAIM 3 - Environment (Counter)</strong> <span class="pattern-badge">[L→I→R-E-C]</span></li>
-                                </ul>
                             </div>
 
-                            <div class="skeleton-section conclusion-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">CONCLUSION</span>
-                                    <span class="count">(30-35 words)</span>
+                            <div class="claim-box">
+                                <div class="claim-title">CLAIM 1: It offers unparalleled convenience</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Digital platforms eliminate travel time</div>
+                                <div class="claim-detail"><strong>Example:</strong> Browse and purchase 24/7 from home</div>
+                                <div class="claim-detail"><strong>Result:</strong> Shopping becomes effortless</div>
+                            </div>
+
+                            <div class="claim-box">
+                                <div class="claim-title">CLAIM 2: Provides access to wider product ranges</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Global marketplace integration</div>
+                                <div class="claim-detail"><strong>Example:</strong> Compare prices across multiple retailers instantly</div>
+                                <div class="claim-detail"><strong>Compare:</strong> Unlimited inventory versus physical stores</div>
+                            </div>
+
+                            <div class="claim-box counter">
+                                <div class="claim-title">CLAIM 3: E-commerce contributes to environmental concerns</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Excessive packaging and delivery emissions</div>
+                                <div class="claim-detail"><strong>Example:</strong> Each individual delivery increases carbon footprint</div>
+                                <div class="claim-detail"><strong>Contrast:</strong> Sustainable options are emerging</div>
+                            </div>
+
+                            <div class="notes-section">
+                                <span class="notes-label">Conclusion</span>
+                                <div class="notes-content">
+                                    Online shopping presents <strong>remarkable convenience and notable challenges.</strong> Benefits outweigh drawbacks when practiced responsibly.
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li>Summary + Opinion + Final statement</li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -547,17 +546,17 @@
                         </div>
                         
                         <div class="section-text" style="margin-bottom: 15px;">
-                            <strong style="color: #4CAF50;">CLAIM 1:</strong>
+                            <strong style="color: #4CAF50;">CLAIM 1:</strong><br>
                             <span class="key-expression">Firstly, the main argument in favour is that</span> online shopping offers unparalleled convenience. <span class="key-expression">For instance</span>, consumers browse and purchase products 24/7 from home. <span class="key-expression">Consequently</span>, shopping becomes effortless. <span class="key-expression">This is because</span> digital platforms eliminate travel time.
                         </div>
 
                         <div class="section-text" style="margin-bottom: 15px;">
-                            <strong style="color: #4CAF50;">CLAIM 2:</strong>
+                            <strong style="color: #4CAF50;">CLAIM 2:</strong><br>
                             <span class="key-expression">Secondly, one positive aspect is that</span> platforms provide access to wider product ranges. <span class="key-expression">This is largely due to</span> global marketplace integration. <span class="key-expression">For example</span>, shoppers compare prices across multiple retailers instantly. <span class="key-expression">Unlike</span> physical stores, online platforms offer unlimited inventory.
                         </div>
 
                         <div class="section-text">
-                            <strong style="color: #f44336;">CLAIM 3:</strong>
+                            <strong style="color: #f44336;">CLAIM 3:</strong><br>
                             <span class="key-expression">However, the obvious drawback is that</span> e-commerce contributes to environmental concerns. <span class="key-expression">This is largely due to</span> excessive packaging and delivery emissions. <span class="key-expression">For instance</span>, each individual delivery increases carbon footprint. <span class="key-expression">Although</span> concerning, sustainable options are emerging.
                         </div>
                     </div>
@@ -594,41 +593,47 @@
                 <div class="carousel-track" data-track="3">
                     <!-- Slide 0: SKELETON -->
                     <div class="carousel-slide">
-                        <div class="skeleton-container">
-                            <div class="skeleton-header">📋 ESSAY SKELETON - 190 WORDS TOTAL</div>
-                            
-                            <div class="skeleton-section intro-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">INTRODUCTION</span>
-                                    <span class="count">(35-40 words)</span>
+                        <div class="skeleton-notes">
+                            <div class="notes-section">
+                                <span class="notes-label">Background Information</span>
+                                <div class="notes-content">
+                                    Travelling broadens the mind and enriches life experiences. International travel offers <strong>educational benefits despite</strong> environmental <strong>costs.</strong>
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>[1] Context:</strong> Travel broadens minds</li>
-                                    <li><strong>[2] Thesis:</strong> Benefits despite costs</li>
-                                    <li><strong>[3] Preview:</strong> Essential to study both sides</li>
-                                </ul>
                             </div>
 
-                            <div class="skeleton-section body-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">BODY (3 Claims)</span>
-                                    <span class="count">(150-155 words)</span>
+                            <div class="notes-section">
+                                <span class="notes-label">Aim</span>
+                                <div class="notes-content">
+                                    Essential to study both perspectives.
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>CLAIM 1 - Cultural Exposure</strong> <span class="pattern-badge">[L→I→E-R-R]</span></li>
-                                    <li><strong>CLAIM 2 - Personal Growth</strong> <span class="pattern-badge">[L→I→R-E-C]</span></li>
-                                    <li><strong>CLAIM 3 - Environment (Counter)</strong> <span class="pattern-badge">[L→I→R-E-C]</span></li>
-                                </ul>
                             </div>
 
-                            <div class="skeleton-section conclusion-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">CONCLUSION</span>
-                                    <span class="count">(30-35 words)</span>
+                            <div class="claim-box">
+                                <div class="claim-title">CLAIM 1: Exposes people to diverse cultures</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Direct cultural immersion breaks down stereotypes</div>
+                                <div class="claim-detail"><strong>Example:</strong> Experiencing different traditions firsthand</div>
+                                <div class="claim-detail"><strong>Result:</strong> Tolerance increases significantly</div>
+                            </div>
+
+                            <div class="claim-box">
+                                <div class="claim-title">CLAIM 2: Enhances personal growth</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Navigating unfamiliar environments independently</div>
+                                <div class="claim-detail"><strong>Example:</strong> Travelers build confidence and problem-solving skills</div>
+                                <div class="claim-detail"><strong>Compare:</strong> Travel pushes comfort zone boundaries</div>
+                            </div>
+
+                            <div class="claim-box counter">
+                                <div class="claim-title">CLAIM 3: Air travel contributes to climate change</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Substantial carbon emissions from aviation</div>
+                                <div class="claim-detail"><strong>Example:</strong> Single flights produce significant environmental impact</div>
+                                <div class="claim-detail"><strong>Contrast:</strong> Sustainable tourism practices emerging</div>
+                            </div>
+
+                            <div class="notes-section">
+                                <span class="notes-label">Conclusion</span>
+                                <div class="notes-content">
+                                    Travelling offers <strong>invaluable experiences</strong> alongside environmental responsibilities. Embrace responsible travel.
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li>Summary + Opinion on responsible travel</li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -652,17 +657,17 @@
                         </div>
                         
                         <div class="section-text" style="margin-bottom: 15px;">
-                            <strong style="color: #4CAF50;">CLAIM 1:</strong>
+                            <strong style="color: #4CAF50;">CLAIM 1:</strong><br>
                             <span class="key-expression">Firstly, the main advantage is that</span> travelling exposes people to diverse cultures and perspectives. <span class="key-expression">For example</span>, experiencing different traditions firsthand fosters greater understanding. <span class="key-expression">Consequently</span>, tolerance increases significantly. <span class="key-expression">This is because</span> direct cultural immersion breaks down stereotypes.
                         </div>
 
                         <div class="section-text" style="margin-bottom: 15px;">
-                            <strong style="color: #4CAF50;">CLAIM 2:</strong>
+                            <strong style="color: #4CAF50;">CLAIM 2:</strong><br>
                             <span class="key-expression">Secondly, one positive aspect is that</span> exploring new destinations enhances personal growth. <span class="key-expression">This is largely due to</span> navigating unfamiliar environments independently. <span class="key-expression">For instance</span>, travelers build confidence and problem-solving skills. <span class="key-expression">Unlike</span> staying home, travel pushes comfort zone boundaries.
                         </div>
 
                         <div class="section-text">
-                            <strong style="color: #f44336;">CLAIM 3:</strong>
+                            <strong style="color: #f44336;">CLAIM 3:</strong><br>
                             <span class="key-expression">However, the argument against frequent air travel is that</span> it contributes to climate change. <span class="key-expression">This is largely due to</span> substantial carbon emissions from aviation. <span class="key-expression">For instance</span>, single flights produce significant environmental impact. <span class="key-expression">Although</span> concerning, sustainable tourism practices are emerging.
                         </div>
                     </div>
@@ -699,41 +704,47 @@
                 <div class="carousel-track" data-track="4">
                     <!-- Slide 0: SKELETON -->
                     <div class="carousel-slide">
-                        <div class="skeleton-container">
-                            <div class="skeleton-header">📋 ESSAY SKELETON - 190 WORDS TOTAL</div>
-                            
-                            <div class="skeleton-section intro-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">INTRODUCTION</span>
-                                    <span class="count">(35-40 words)</span>
+                        <div class="skeleton-notes">
+                            <div class="notes-section">
+                                <span class="notes-label">Background Information</span>
+                                <div class="notes-content">
+                                    Urban migration continues to accelerate globally. Cities offer <strong>abundant opportunities but</strong> also present <strong>unique challenges.</strong>
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>[1] Context:</strong> Urban migration accelerating</li>
-                                    <li><strong>[2] Thesis:</strong> Cities offer opportunities but challenges</li>
-                                    <li><strong>[3] Preview:</strong> Need to address urbanization</li>
-                                </ul>
                             </div>
 
-                            <div class="skeleton-section body-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">BODY (3 Claims)</span>
-                                    <span class="count">(150-155 words)</span>
+                            <div class="notes-section">
+                                <span class="notes-label">Aim</span>
+                                <div class="notes-content">
+                                    Important to address this issue.
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>CLAIM 1 - Career Opportunities</strong> <span class="pattern-badge">[L→I→E-R-C]</span></li>
-                                    <li><strong>CLAIM 2 - Cultural Amenities</strong> <span class="pattern-badge">[L→I→R-E-R]</span></li>
-                                    <li><strong>CLAIM 3 - High Costs (Counter)</strong> <span class="pattern-badge">[L→I→R-E-C]</span></li>
-                                </ul>
                             </div>
 
-                            <div class="skeleton-section conclusion-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">CONCLUSION</span>
-                                    <span class="count">(30-35 words)</span>
+                            <div class="claim-box">
+                                <div class="claim-title">CLAIM 1: Provides superior career opportunities</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Diverse job markets in cities</div>
+                                <div class="claim-detail"><strong>Example:</strong> Major corporations concentrate in urban centers</div>
+                                <div class="claim-detail"><strong>Result:</strong> Higher salaries and valuable experience</div>
+                            </div>
+
+                            <div class="claim-box">
+                                <div class="claim-title">CLAIM 2: Offers extensive cultural amenities</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Cities concentrate resources and populations</div>
+                                <div class="claim-detail"><strong>Example:</strong> Museums, theaters, diverse restaurants</div>
+                                <div class="claim-detail"><strong>Result:</strong> Quality of life improves through cultural richness</div>
+                            </div>
+
+                            <div class="claim-box counter">
+                                <div class="claim-title">CLAIM 3: Urban living involves exorbitant costs</div>
+                                <div class="claim-detail"><strong>Reason:</strong> High demand for limited housing</div>
+                                <div class="claim-detail"><strong>Example:</strong> Rent consumes significant portions of salaries</div>
+                                <div class="claim-detail"><strong>Contrast:</strong> Cities continue attracting people</div>
+                            </div>
+
+                            <div class="notes-section">
+                                <span class="notes-label">Conclusion</span>
+                                <div class="notes-content">
+                                    City life presents <strong>opportunities and challenges.</strong> Urban centers continue attracting people seeking professional advancement and cultural diversity.
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li>Summary + Opinion on urban attraction</li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -757,17 +768,17 @@
                         </div>
                         
                         <div class="section-text" style="margin-bottom: 15px;">
-                            <strong style="color: #4CAF50;">CLAIM 1:</strong>
+                            <strong style="color: #4CAF50;">CLAIM 1:</strong><br>
                             <span class="key-expression">Firstly, the main advantage is that</span> city living provides access to superior career opportunities. <span class="key-expression">For example</span>, major corporations concentrate in urban centers. <span class="key-expression">Consequently</span>, professionals earn higher salaries and gain valuable experience. <span class="key-expression">Unlike</span> rural areas, cities offer diverse job markets.
                         </div>
 
                         <div class="section-text" style="margin-bottom: 15px;">
-                            <strong style="color: #4CAF50;">CLAIM 2:</strong>
+                            <strong style="color: #4CAF50;">CLAIM 2:</strong><br>
                             <span class="key-expression">Secondly, one positive aspect is that</span> urban environments offer extensive cultural amenities. <span class="key-expression">This is largely because</span> cities concentrate resources and populations. <span class="key-expression">For instance</span>, residents enjoy museums, theaters, diverse restaurants. <span class="key-expression">Therefore</span>, quality of life improves through cultural richness.
                         </div>
 
                         <div class="section-text">
-                            <strong style="color: #f44336;">CLAIM 3:</strong>
+                            <strong style="color: #f44336;">CLAIM 3:</strong><br>
                             <span class="key-expression">However, the argument against urban living is that</span> it involves exorbitant costs. <span class="key-expression">This is largely due to</span> high demand for limited housing. <span class="key-expression">For example</span>, rent consumes significant portions of salaries. <span class="key-expression">Although</span> concerning, cities continue attracting people.
                         </div>
                     </div>
@@ -804,41 +815,47 @@
                 <div class="carousel-track" data-track="5">
                     <!-- Slide 0: SKELETON -->
                     <div class="carousel-slide">
-                        <div class="skeleton-container">
-                            <div class="skeleton-header">📋 ESSAY SKELETON - 190 WORDS TOTAL</div>
-                            
-                            <div class="skeleton-section intro-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">INTRODUCTION</span>
-                                    <span class="count">(35-40 words)</span>
+                        <div class="skeleton-notes">
+                            <div class="notes-section">
+                                <span class="notes-label">Background Information</span>
+                                <div class="notes-content">
+                                    Communication across cultures is essential. English has become the global lingua franca <strong>despite</strong> debates about <strong>linguistic diversity.</strong>
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>[1] Context:</strong> Communication across cultures</li>
-                                    <li><strong>[2] Thesis:</strong> English as global lingua franca</li>
-                                    <li><strong>[3] Preview:</strong> Discuss impact</li>
-                                </ul>
                             </div>
 
-                            <div class="skeleton-section body-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">BODY (3 Claims)</span>
-                                    <span class="count">(150-155 words)</span>
+                            <div class="notes-section">
+                                <span class="notes-label">Aim</span>
+                                <div class="notes-content">
+                                    Important to discuss its impact.
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>CLAIM 1 - Career Opportunities</strong> <span class="pattern-badge">[L→I→E-R-R]</span></li>
-                                    <li><strong>CLAIM 2 - Educational Access</strong> <span class="pattern-badge">[L→I→R-E-R]</span></li>
-                                    <li><strong>CLAIM 3 - Diversity Threat (Counter)</strong> <span class="pattern-badge">[L→I→R-E-C]</span></li>
-                                </ul>
                             </div>
 
-                            <div class="skeleton-section conclusion-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">CONCLUSION</span>
-                                    <span class="count">(30-35 words)</span>
+                            <div class="claim-box">
+                                <div class="claim-title">CLAIM 1: Opens doors to international career opportunities</div>
+                                <div class="claim-detail"><strong>Reason:</strong> English dominates business communication worldwide</div>
+                                <div class="claim-detail"><strong>Example:</strong> Multinational companies require English proficiency</div>
+                                <div class="claim-detail"><strong>Result:</strong> Job prospects expand globally</div>
+                            </div>
+
+                            <div class="claim-box">
+                                <div class="claim-title">CLAIM 2: Grants access to vast educational resources</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Most academic research published in English</div>
+                                <div class="claim-detail"><strong>Example:</strong> Online courses predominantly use English</div>
+                                <div class="claim-detail"><strong>Result:</strong> Learners access cutting-edge knowledge</div>
+                            </div>
+
+                            <div class="claim-box counter">
+                                <div class="claim-title">CLAIM 3: May threaten linguistic diversity</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Diminishing use of minority languages</div>
+                                <div class="claim-detail"><strong>Example:</strong> Students without English face limited opportunities</div>
+                                <div class="claim-detail"><strong>Contrast:</strong> Multilingualism should be promoted</div>
+                            </div>
+
+                            <div class="notes-section">
+                                <span class="notes-label">Conclusion</span>
+                                <div class="notes-content">
+                                    Learning English provides <strong>significant practical advantages</strong> while raising concerns about cultural preservation. Pursue English alongside preserving native languages.
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li>Summary + Balance with native languages</li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -862,17 +879,17 @@
                         </div>
                         
                         <div class="section-text" style="margin-bottom: 15px;">
-                            <strong style="color: #4CAF50;">CLAIM 1:</strong>
+                            <strong style="color: #4CAF50;">CLAIM 1:</strong><br>
                             <span class="key-expression">Firstly, the main advantage is that</span> learning English opens doors to international career opportunities. <span class="key-expression">For example</span>, multinational companies require English proficiency. <span class="key-expression">Consequently</span>, job prospects expand globally. <span class="key-expression">This is because</span> English dominates business communication worldwide.
                         </div>
 
                         <div class="section-text" style="margin-bottom: 15px;">
-                            <strong style="color: #4CAF50;">CLAIM 2:</strong>
+                            <strong style="color: #4CAF50;">CLAIM 2:</strong><br>
                             <span class="key-expression">Secondly, one positive aspect is that</span> English fluency grants access to vast educational resources. <span class="key-expression">This is largely because</span> most academic research is published in English. <span class="key-expression">For instance</span>, online courses predominantly use English. <span class="key-expression">Therefore</span>, learners access cutting-edge knowledge.
                         </div>
 
                         <div class="section-text">
-                            <strong style="color: #f44336;">CLAIM 3:</strong>
+                            <strong style="color: #f44336;">CLAIM 3:</strong><br>
                             <span class="key-expression">However, the argument against prioritizing English is that</span> it may threaten linguistic diversity. <span class="key-expression">This is largely due to</span> diminishing use of minority languages. <span class="key-expression">For instance</span>, students without English access face limited opportunities. <span class="key-expression">Although</span> important, multilingualism should be promoted.
                         </div>
                     </div>
@@ -909,41 +926,47 @@
                 <div class="carousel-track" data-track="6">
                     <!-- Slide 0: SKELETON -->
                     <div class="carousel-slide">
-                        <div class="skeleton-container">
-                            <div class="skeleton-header">📋 ESSAY SKELETON - 190 WORDS TOTAL</div>
-                            
-                            <div class="skeleton-section intro-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">INTRODUCTION</span>
-                                    <span class="count">(35-40 words)</span>
+                        <div class="skeleton-notes">
+                            <div class="notes-section">
+                                <span class="notes-label">Background Information</span>
+                                <div class="notes-content">
+                                    Maintaining a healthy diet is crucial for wellbeing. Nutrition directly impacts health <strong>but</strong> modern lifestyles make healthy eating <strong>challenging.</strong>
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>[1] Context:</strong> Diet crucial for wellbeing</li>
-                                    <li><strong>[2] Thesis:</strong> Nutrition impacts health</li>
-                                    <li><strong>[3] Preview:</strong> How to tackle problem</li>
-                                </ul>
                             </div>
 
-                            <div class="skeleton-section body-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">BODY (3 Claims)</span>
-                                    <span class="count">(150-155 words)</span>
+                            <div class="notes-section">
+                                <span class="notes-label">Aim</span>
+                                <div class="notes-content">
+                                    How can we tackle this problem?
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li><strong>CLAIM 1 - Disease Prevention</strong> <span class="pattern-badge">[L→I→E-R-R]</span></li>
-                                    <li><strong>CLAIM 2 - Energy Levels</strong> <span class="pattern-badge">[L→I→R-E-R]</span></li>
-                                    <li><strong>CLAIM 3 - Cost/Time (Counter)</strong> <span class="pattern-badge">[L→I→R-E-C]</span></li>
-                                </ul>
                             </div>
 
-                            <div class="skeleton-section conclusion-sk">
-                                <div class="skeleton-title">
-                                    <span class="label">CONCLUSION</span>
-                                    <span class="count">(30-35 words)</span>
+                            <div class="claim-box">
+                                <div class="claim-title">CLAIM 1: Prevents chronic diseases</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Proper nutrition strengthens immune systems</div>
+                                <div class="claim-detail"><strong>Example:</strong> Diets rich in vegetables reduce health risks</div>
+                                <div class="claim-detail"><strong>Result:</strong> Medical costs decrease substantially</div>
+                            </div>
+
+                            <div class="claim-box">
+                                <div class="claim-title">CLAIM 2: Enhances energy levels</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Balanced meals stabilize blood sugar</div>
+                                <div class="claim-detail"><strong>Example:</strong> Improved concentration and productivity</div>
+                                <div class="claim-detail"><strong>Result:</strong> Both mental and physical performance improve</div>
+                            </div>
+
+                            <div class="claim-box counter">
+                                <div class="claim-title">CLAIM 3: Can be expensive and time-consuming</div>
+                                <div class="claim-detail"><strong>Reason:</strong> Higher costs of fresh produce</div>
+                                <div class="claim-detail"><strong>Example:</strong> Organic foods cost significantly more</div>
+                                <div class="claim-detail"><strong>Contrast:</strong> Government subsidies could help</div>
+                            </div>
+
+                            <div class="notes-section">
+                                <span class="notes-label">Conclusion</span>
+                                <div class="notes-content">
+                                    Healthy diet offers <strong>profound benefits</strong> despite practical challenges. Society should prioritize nutrition education and food accessibility.
                                 </div>
-                                <ul class="skeleton-list">
-                                    <li>Summary + Society should prioritize nutrition</li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -967,17 +990,17 @@
                         </div>
                         
                         <div class="section-text" style="margin-bottom: 15px;">
-                            <strong style="color: #4CAF50;">CLAIM 1:</strong>
+                            <strong style="color: #4CAF50;">CLAIM 1:</strong><br>
                             <span class="key-expression">Firstly, the main advantage is that</span> eating healthily prevents chronic diseases. <span class="key-expression">For example</span>, diets rich in vegetables significantly reduce health risks. <span class="key-expression">Consequently</span>, medical costs decrease substantially. <span class="key-expression">This is because</span> proper nutrition strengthens immune systems.
                         </div>
 
                         <div class="section-text" style="margin-bottom: 15px;">
-                            <strong style="color: #4CAF50;">CLAIM 2:</strong>
+                            <strong style="color: #4CAF50;">CLAIM 2:</strong><br>
                             <span class="key-expression">Secondly, one positive aspect is that</span> proper nutrition enhances energy levels. <span class="key-expression">This is largely because</span> balanced meals stabilize blood sugar. <span class="key-expression">For instance</span>, people experience improved concentration and productivity. <span class="key-expression">Therefore</span>, both mental and physical performance improve.
                         </div>
 
                         <div class="section-text">
-                            <strong style="color: #f44336;">CLAIM 3:</strong>
+                            <strong style="color: #f44336;">CLAIM 3:</strong><br>
                             <span class="key-expression">However, the argument against strict healthy eating is that</span> it can be expensive and time-consuming. <span class="key-expression">This is largely due to</span> higher costs of fresh produce. <span class="key-expression">For example</span>, organic foods cost significantly more. <span class="key-expression">Although</span> challenging, government subsidies could help.
                         </div>
                     </div>
